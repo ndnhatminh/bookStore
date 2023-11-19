@@ -8,12 +8,12 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 	$password = $_POST['password'];
 
 	$text = "Email";
-	$location = "../container/login/login.php";
+	$location = "../../container/login/login.php";
 	$ms = "error";
     is_empty($email, $text, $location, $ms, "");
 
     $text = "Password";
-	$location = "../container/login/login.php";
+	$location = "../../container/login/login.php";
 	$ms = "error";
     is_empty($password, $text, $location, $ms, "");
 
@@ -34,17 +34,17 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     			header("Location: ../../admin.php");
     		}else {
     	        $em = "Incorrect User name or password";
-    	        header("Location: ../container/login/login.php?error=$em");
+    	        header("Location: ../../container/login/login.php?error=$em");
     		}
     	}else {
     	    $em = "Incorrect User name or password";
-    	    header("Location: ../container/login/login.php?error=$em");
+    	    header("Location: ../../container/login/login.php?error=$em");
     	}
     }else{
     	$em = "Incorrect User name or password";
-    	header("Location: ../container/login/login.php?error=$em");
+    	header("Location: ../../container/login/login.php?error=$em");
     }
 
 }else {
-	header("Location: ../container/login/login.php");
+	header("Location: ../../container/login/login.php");
 }

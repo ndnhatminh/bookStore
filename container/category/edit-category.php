@@ -4,17 +4,17 @@ if (isset($_SESSION['user_id']) &&
     isset($_SESSION['user_email'])) {
     
 	if (!isset($_GET['id'])) {
-        header("Location: admin.php");
+        header("Location: ../../admin.php");
         exit;
 	}
 
 	$id = $_GET['id'];
-	include "db_conn.php";
-	include "php/func-category.php";
+	include "../ulti/db_conn.php";
+	include "../../php/category/func-category.php";
     $category = getCategory($conn, $id);
     
     if ($category == 0) {
-        header("Location: admin.php");
+        header("Location: ../../admin.php");
         exit;
     }
 ?>
@@ -42,7 +42,7 @@ if (isset($_SESSION['user_id']) &&
 	<div class="container">
 		<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
 		  <div class="container-fluid">
-		    <a class="navbar-brand" href="admin.php">Admin</a>
+		    <a class="navbar-brand" href="../../admin.php">Admin</a>
 		    <button
 				class="navbar-toggler"
 				type="button"
@@ -60,11 +60,11 @@ if (isset($_SESSION['user_id']) &&
 		        <li class="nav-item">
 		          <a class="nav-link" 
 		             aria-current="page" 
-		             href="index.php">Store</a>
+		             href="../../index.php">Store</a>
 		        </li>
 		        <li class="nav-item">
 		          <a class="nav-link" 
-		             href="add-book.php">Add Book</a>
+		             href="../book/add-book.php">Add Book</a>
 		        </li>
 		        <li class="nav-item">
 		          <a class="nav-link" 
@@ -72,17 +72,17 @@ if (isset($_SESSION['user_id']) &&
 		        </li>
 		        <li class="nav-item">
 		          <a class="nav-link" 
-		             href="add-author.php">Add Author</a>
+		             href="../author/add-author.php">Add Author</a>
 		        </li>
 		        <li class="nav-item">
 		          <a class="nav-link" 
-		             href="logout.php">Logout</a>
+		             href="../login/logout.php">Logout</a>
 		        </li>
 		      </ul>
 		    </div>
 		  </div>
 		</nav>
-     <form action="php/edit-category.php"
+     <form action="../../php/edit-category.php"
            method="post" 
            class="shadow p-4 rounded mt-5"
            style="width: 90%; max-width: 50rem;">
@@ -126,6 +126,6 @@ if (isset($_SESSION['user_id']) &&
 </html>
 
 <?php }else{
-  header("Location: login.php");
+  header("Location: ../login/login.php");
   exit;
 } ?>

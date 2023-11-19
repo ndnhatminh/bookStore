@@ -168,11 +168,11 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
 					?>
 				</td>
 				<td>
-					<a href="edit-book.php?id=<?=$book['id']?>" 
+					<a href="container/book/edit-book.php?id=<?=$book['id']?>" 
 					   class="btn btn-warning">
 					   Edit</a>
 
-					<a href="php/delete-book.php?id=<?=$book['id']?>" 
+					<a href="php/book/delete-book.php?id=<?=$book['id']?>" 
 					   class="btn btn-danger">
 				       Delete</a>
 				</td>
@@ -215,11 +215,11 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
 					<td><?=$j?></td>
 					<td><?=$category['name']?></td>
 					<td>
-						<a href="edit-category.php?id=<?=$category['id']?>" 
+						<a href="container/category/edit-category.php?id=<?=$category['id']?>" 
 						   class="btn btn-warning">
 						   Edit</a>
 
-						<a href="php/delete-category.php?id=<?=$category['id']?>" 
+						<a href="php/category/delete-category.php?id=<?=$category['id']?>" 
 						   class="btn btn-danger">
 					       Delete</a>
 					</td>
@@ -259,11 +259,11 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
 					<td><?=$k?></td>
 					<td><?=$author['name']?></td>
 					<td>
-						<a href="edit-author.php?id=<?=$author['id']?>" 
+						<a href="container/author/edit-author.php?id=<?=$author['id']?>" 
 						   class="btn btn-warning">
 						   Edit</a>
 
-						<a href="php/delete-author.php?id=<?=$author['id']?>" 
+						<a href="php/author/delete-author.php?id=<?=$author['id']?>" 
 						   class="btn btn-danger">
 					       Delete</a>
 					</td>
@@ -277,6 +277,6 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
 </html>
 
 <?php }else{
-  header("Location: login.php");
+  header("Location: container/login/login.php");
   exit;
 } ?>

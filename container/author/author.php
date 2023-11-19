@@ -88,8 +88,7 @@ $categories = getAllCategories($conn);
 		<h1 class="display-4 p-3 fs-3"> 
 			<a href="../../index.php"
 			   class="nd">
-				<img src="../../img/back-arrow.PNG" 
-				     width="35">
+				<img src="../../img/back-arrow.PNG" width="35" alt="">
 			</a>
 		   <?=$current_author['name']?>
 		</h1>
@@ -98,8 +97,7 @@ $categories = getAllCategories($conn);
 				<div class="alert alert-warning 
         	            text-center p-5" 
         	     role="alert">
-        	     <img src="../../img/empty.png" 
-        	          width="100">
+        	     <img src="../../img/empty.png" width="100" alt="">
         	     <br>
 			    There is no book in the database
 		       </div>
@@ -107,8 +105,7 @@ $categories = getAllCategories($conn);
 			<div class="pdf-list d-flex flex-wrap">
 				<?php foreach ($books as $book) { ?>
 				<div class="card m-1">
-					<img src="uploads/cover/<?=$book['cover']?>"
-					     class="card-img-top">
+					<img src="../../uploads/cover/<?=$book['cover']?>" class="card-img-top" alt="">
 					<div class="card-body">
 						<h5 class="card-title">
 							<?=$book['title']?>
@@ -136,10 +133,10 @@ $categories = getAllCategories($conn);
 								<?php } ?>
 							<br></b></i>
 						</p>
-                       <a href="uploads/files/<?=$book['file']?>"
+                       <a href="../../uploads/files/<?=$book['file']?>"
                           class="btn btn-success">Open</a>
 
-                        <a href="uploads/files/<?=$book['file']?>"
+                        <a href="../../uploads/files/<?=$book['file']?>"
                           class="btn btn-primary"
                           download="<?=$book['title']?>">Download</a>
 					</div>
@@ -172,7 +169,7 @@ $categories = getAllCategories($conn);
 				   class="list-group-item list-group-item-action active">Author</a>
 				   <?php foreach ($authors as $author ) {?>
 				  
-				   <a href="../author/author.php?id=<?=$author['id']?>"
+				   <a href="author.php?id=<?=$author['id']?>"
 				      class="list-group-item list-group-item-action">
 				      <?=$author['name']?></a>
 				<?php } } ?>

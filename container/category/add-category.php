@@ -29,7 +29,7 @@ if (isset($_SESSION['user_id']) &&
 	<div class="container">
 		<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
 		  <div class="container-fluid">
-		    <a class="navbar-brand" href="admin.php">Admin</a>
+		    <a class="navbar-brand" href="../../admin.php">Admin</a>
 		    <button
 				class="navbar-toggler"
 				type="button"
@@ -47,11 +47,11 @@ if (isset($_SESSION['user_id']) &&
 		        <li class="nav-item">
 		          <a class="nav-link" 
 		             aria-current="page" 
-		             href="index.php">Store</a>
+		             href="../../index.php">Store</a>
 		        </li>
 		        <li class="nav-item">
 		          <a class="nav-link" 
-		             href="add-book.php">Add Book</a>
+		             href="../book/add-book.php">Add Book</a>
 		        </li>
 		        <li class="nav-item">
 		          <a class="nav-link active" 
@@ -59,18 +59,18 @@ if (isset($_SESSION['user_id']) &&
 		        </li>
 		        <li class="nav-item">
 		          <a class="nav-link" 
-		             href="add-author.php">Add Author</a>
+		             href="../author/add-author.php">Add Author</a>
 		        </li>
 		        <li class="nav-item">
 		          <a class="nav-link" 
-		             href="logout.php">Logout</a>
+		             href="../login/logout.php">Logout</a>
 		        </li>
 		      </ul>
 		    </div>
 		  </div>
 		</nav>
-     <form action="php/add-category.php"
-           method="post" 
+     <form action="../../php/category/add-category.php"
+           method="post"
            class="shadow p-4 rounded mt-5"
            style="width: 90%; max-width: 50rem;">
 
@@ -96,15 +96,20 @@ if (isset($_SESSION['user_id']) &&
 		           name="category_name">
 		</div>
 
-	    <button type="submit" 
-	            class="btn btn-primary">
-	            Add Category</button>
+	    <button 
+			type="submit" 
+	        class="btn btn-primary"
+		>
+	            Add Category
+		</button>
      </form>
 	</div>
 </body>
 </html>
 
-<?php }else{
-  header("Location: login.php");
-  exit;
-} ?>
+<?php
+	}else{
+  		header("Location: login.php");
+  	exit;
+	}
+?>

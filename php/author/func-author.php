@@ -12,9 +12,6 @@ function getAllAuthor($conn){
 
    return $authors;
 }
-
-
-# Get  Author by ID function
 function getAuthor($conn, $id){
    $sql  = "SELECT * FROM authors WHERE id=?";
    $stmt = $conn->prepare($sql);

@@ -4,12 +4,12 @@ if (isset($_SESSION['user_id']) &&
     isset($_SESSION['user_email'])) {
 
 	if (!isset($_GET['id'])) {
-        header("Location: admin.php");
+        header("Location: ../../admin.php");
         exit;
 	}
 
 	$id = $_GET['id'];
-	include "../ulti/db_conn.phpdb_conn.php";
+	include "../ulti/db_conn.php";
 	include "../../php/book/func-book.php";
 
     $book = getBook($conn, $id);
@@ -22,7 +22,7 @@ if (isset($_SESSION['user_id']) &&
 	include "../../php/category/func-category.php";
     $categories = getAllCategories($conn);
 
-	include "php/func-author.php";
+	include "../../php/author/func-author.php";
     $authors = getAllAuthor($conn);
 
 ?>
@@ -205,7 +205,7 @@ if (isset($_SESSION['user_id']) &&
 		           value="<?=$book['cover']?>" 
 		           name="current_cover">
 
-		    <a href="uploads/cover/<?=$book['cover']?>"
+		    <a href="../../uploads/cover/<?=$book['cover']?>"
 		       class="link-dark">Current Cover</a>
 		</div>
 
@@ -222,7 +222,7 @@ if (isset($_SESSION['user_id']) &&
 		           value="<?=$book['file']?>" 
 		           name="current_file">
 
-		    <a href="uploads/files/<?=$book['file']?>"
+		    <a href="../../uploads/files/<?=$book['file']?>"
 		       class="link-dark">Current File</a>
 		</div>
 

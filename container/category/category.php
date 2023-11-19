@@ -1,18 +1,18 @@
 <?php 
 session_start();
 if (!isset($_GET['id'])) {
-	header("Location: index.php");
+	header("Location: ../../index.php");
 	exit;
 }
 $id = $_GET['id'];
-include "db_conn.php";
-include "php/func-book.php";
-$books = get_books_by_category($conn, $id);
-include "php/func-author.php";
-$authors = get_all_author($conn);
-include "php/func-category.php";
-$categories = get_all_categories($conn);
-$current_category = get_category($conn, $id);
+include "../ulti/db_conn.php";
+include "../../php/func-book.php";
+$books = getBooksByCategory($conn, $id);
+include "../../php/func-author.php";
+$authors = getAllAuthor($conn);
+include "../../php/func-category.php";
+$categories = getAllCategories($conn);
+$current_category = getCategory($conn, $id);
 
  ?>
 <!DOCTYPE html>
@@ -38,7 +38,7 @@ $current_category = get_category($conn, $id);
 	<div class="container">
 		<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
 		  <div class="container-fluid">
-		    <a class="navbar-brand" href="index.php">Online Book Store</a>
+		    <a class="navbar-brand" href="../../index.php">Online Book Store</a>
 		    <button
 				class="navbar-toggler"
 				type="button"
@@ -56,7 +56,7 @@ $current_category = get_category($conn, $id);
 		        <li class="nav-item">
 		          <a class="nav-link active" 
 		             aria-current="page" 
-		             href="index.php">Store</a>
+		             href="../../index.php">Store</a>
 		        </li>
 		        <li class="nav-item">
 		          <a class="nav-link" 
@@ -69,10 +69,10 @@ $current_category = get_category($conn, $id);
 		        <li class="nav-item">
 		          <?php if (isset($_SESSION['user_id'])) {?>
 		          	<a class="nav-link" 
-		             href="admin.php">Admin</a>
+		             href="../../admin.php">Admin</a>
 		          <?php }else{ ?>
 		          <a class="nav-link" 
-		             href="login.php">Login</a>
+		             href="../login/login.php">Login</a>
 		          <?php } ?>
 
 		        </li>
@@ -81,20 +81,18 @@ $current_category = get_category($conn, $id);
 		  </div>
 		</nav>
 		<h1 class="display-4 p-3 fs-3"> 
-			<a href="index.php"
-			   class="nd">
-				<img src="img/back-arrow.PNG" 
-				     width="35">
+			<a href="../../index.php" class="nd">
+				<img src="../../img/back-arrow.PNG" width="35" alt="">
 			</a>
 		   <?=$current_category['name']?>
 		</h1>
 		<div class="d-flex pt-3">
 			<?php if ($books == 0){ ?>
-				<div class="alert alert-warning 
-        	            text-center p-5" 
-        	     role="alert">
-        	     <img src="img/empty.png" 
-        	          width="100">
+				<div
+					class="alert alert-warning text-center p-5" 
+        	     	role="alert"
+				>
+        	     <img src="../../img/empty.png" width="100" alt="">
         	     <br>
 			    There is no book in the database
 		       </div>
@@ -102,8 +100,7 @@ $current_category = get_category($conn, $id);
 			<div class="pdf-list d-flex flex-wrap">
 				<?php foreach ($books as $book) { ?>
 				<div class="card m-1">
-					<img src="uploads/cover/<?=$book['cover']?>"
-					     class="card-img-top">
+					<img src="../../uploads/cover/<?=$book['cover']?>" class="card-img-top" alt="">
 					<div class="card-body">
 						<h5 class="card-title">
 							<?=$book['title']?>
@@ -131,10 +128,10 @@ $current_category = get_category($conn, $id);
 								<?php } ?>
 							<br></b></i>
 						</p>
-                       <a href="uploads/files/<?=$book['file']?>"
+                       <a href="../../uploads/files/<?=$book['file']?>"
                           class="btn btn-success">Open</a>
 
-                        <a href="uploads/files/<?=$book['file']?>"
+                        <a href="../../uploads/files/<?=$book['file']?>"
                           class="btn btn-primary"
                           download="<?=$book['title']?>">Download</a>
 					</div>
@@ -144,10 +141,9 @@ $current_category = get_category($conn, $id);
 		<?php } ?>
 
 		<div class="category">
-			<!-- List of categories -->
 			<div class="list-group">
 				<?php if ($categories == 0){
-					// do nothing
+					// nothing
 				}else{ ?>
 				<a href="#"
 				   class="list-group-item list-group-item-action active">Category</a>
@@ -168,7 +164,7 @@ $current_category = get_category($conn, $id);
 				   class="list-group-item list-group-item-action active">Author</a>
 				   <?php foreach ($authors as $author ) {?>
 				  
-				   <a href="author.php?id=<?=$author['id']?>"
+				   <a href="../author/author.php?id=<?=$author['id']?>"
 				      class="list-group-item list-group-item-action">
 				      <?=$author['name']?></a>
 				<?php } } ?>
