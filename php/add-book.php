@@ -115,6 +115,7 @@ if (isset($_SESSION['username'])&&
                     exit;
                 }else {
                     $sql = "CALL ADD_BOOK('$id', '$title', '$author', '$publication', '$publisher', '$listprice', '$book_cover_URL', '$description', '$category')";
+                    echo $book_cover_URL."<br>";
                     $stmt = $conn->prepare($sql);
                     $stmt->execute();
                     # Success message
