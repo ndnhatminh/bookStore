@@ -1,5 +1,71 @@
 Use e_bookstore;
+INSERT INTO Customer
+VALUES (101,'David Smith','smithdavid0301','123456','SILVER',1901,'1996-01-03');
+INSERT INTO Customer
+VALUES (102,'Britney Spear' ,'britney123','spear456','BRONZE',342,'1998-07-28');
+INSERT INTO Customer
+VALUES (103,'Justin Ray','raythecrayon','ray2802','SILVER',640,'2001-02-28');
+INSERT INTO Customer
+VALUES (104,'Anna Bella','annabelle2803','Bella2002','GOLDEN',2504,'1995-02-20');
+INSERT INTO Customer
+VALUES (105,'Michael Jack','jackmike0104','mike0123','DIAMOND',5032,'1999-04-01');
+INSERT INTO Customer
+VALUES (106,'Tom Richard','tomjerry369','tomyum246','SILVER',1102,'2000-12-25');
 
+INSERT INTO Staff
+VALUES (201,'Tom Hardy','hardy201','201000','MALE','20000');
+INSERT INTO Staff
+VALUES (202,'Catherine Elise','elise202','202001','FEMALE','25000');
+INSERT INTO Staff
+VALUES (203,'Kate Perry','perry203','203001','FEMALE','10000');
+INSERT INTO Staff
+VALUES (211,'William John','john204','204000','MALE','15000');
+INSERT INTO Staff
+VALUES (212,'Diana Rosi','rosi205','205001','FEMALE','28000');
+INSERT INTO Staff
+VALUES (221,'Derrek Rose','rose206','206000','MALE','21000');
+INSERT INTO Staff
+VALUES (222,'Robert Downey','downey207','207000','MALE','17000');
+INSERT INTO Staff
+VALUES (223,'Alex Felix','felix208','208000','MALE','25000');
+
+INSERT INTO Warehouse_Staff
+VALUES (201);
+INSERT INTO Warehouse_Staff
+VALUES (202);
+INSERT INTO Warehouse_Staff
+VALUES (203);
+
+INSERT INTO PageAdmin
+VALUES (211);
+INSERT INTO PageAdmin
+VALUES (212);
+
+INSERT INTO Client_care
+VALUES (221);
+INSERT INTO Client_care
+VALUES (222);
+INSERT INTO Client_care
+VALUES (223);
+
+INSERT INTO Categories (C_Name)
+VALUES ('Psychology');
+INSERT INTO Categories (C_Name)
+VALUES ('Fantasy');
+INSERT INTO Categories (C_Name)
+VALUES ('Cooking');
+INSERT INTO Categories (C_Name)
+VALUES ('History');
+INSERT INTO Categories (C_Name)
+VALUES ('Mystery');
+INSERT INTO Categories (C_Name)
+VALUES ('Romance');
+INSERT INTO Categories (C_Name)
+VALUES ('Science');
+
+
+INSERT INTO Book
+VALUES ('1001','Keep Sharp','Sanjay Gupta M.D.',2021,'Simon & Schuster',14,'db1.jpg','Keep your brain young, healthy, and sharp with this science-driven guide to protecting your mind from decline by neurosurgeon and CNN chief medical correspondent Dr. Sanjay Gupta.');
 INSERT INTO Book
 VALUES ('1002','The Organized Mind','Daniel J. Levitin',2014,'Luke Daniels',17,'db2.jpg','New York Times best-selling author and neuroscientist Daniel J. Levitin shifts his keen insights from your brain on music to your brain in a sea of details.');
 INSERT INTO Book
@@ -25,6 +91,8 @@ VALUES ('1401','Long Shadows (Memory Man Series)','David Baldacci',2022,'Grand C
 
 
 
+INSERT INTO Belong
+VALUES ('7','1001');
 INSERT INTO Belong
 VALUES ('6','1002');
 INSERT INTO Belong

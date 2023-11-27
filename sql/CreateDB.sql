@@ -24,9 +24,8 @@ CREATE TABLE Book
 	Year_publication INT,
 	Publisher VARCHAR(30),
 	List_price INT
-	book_cover_URL VARCHAR(30),
-	description VARCHAR(30),
-	category VARCHAR(30),
+	cover VARCHAR(255),
+	des TEXT,
 );
 
 CREATE TABLE Customer
