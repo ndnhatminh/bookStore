@@ -23,9 +23,9 @@ CREATE TABLE Book
 	Author VARCHAR(30),
 	Year_publication INT,
 	Publisher VARCHAR(30),
-	List_price INT
+	List_price INT,
 	cover VARCHAR(255),
-	des TEXT,
+	des TEXT
 );
 
 CREATE TABLE Customer
