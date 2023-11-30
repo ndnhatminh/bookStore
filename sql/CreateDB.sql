@@ -1,6 +1,6 @@
-CREATE DATABASE E_BookStore;
+CREATE DATABASE e_bookstore;
 -- drop database E_BookStore;
-USE E_BookStore;
+USE e_bookstore;
 
 CREATE TABLE Categories
 (
