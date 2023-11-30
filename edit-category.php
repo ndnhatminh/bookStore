@@ -93,12 +93,14 @@ if (
                     </div>
                 <?php } ?>
 
-                <div class="mb-3" style="display: flex; text-align:center;">
-                    <label class="form-label" style="align-self: flex-end;">Tên Thể Loại</label>
+                <div class="mb-3 row align-items-center">
+                    <label class="col-sm-4 col-form-label col-form-label-sm ">Tên Thể Loại</label>
                     <input type="text" value="<?= $category['ID'] ?>" hidden name="category_id">
-
-                    <input type="text" class="form-control" value="<?= $category['C_Name'] ?>" name="category_name" style="width:75%; margin-left:9%;">
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" value="<?= $category['C_Name'] ?>" name="category_name">
+                    </div>
                 </div>
+
                 <div class="mb-3" style="text-align:center;">
                     <button type="submit" class="btn btn-outline-primary">
                         Cập Nhật Ngay</button>

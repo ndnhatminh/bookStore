@@ -50,8 +50,8 @@ if (
             </div>
         </nav>
         <div class="container">
-            <form action="php/add-program.php" method="POST" class="shadow p-4 rounded mt-5" style=" max-width: 50rem; margin:auto;">
-                <h1 class="text-center pb-5 display-4 fs-3">
+            <form action="php/add-program.php" method="POST" class="shadow p-4 rounded mt-5" style=" max-width: 40rem; margin:auto;">
+                <h1 class="text-center pb-4 display-4 fs-3">
                     Chương Trình Khuyến Mãi
                 </h1>
                 <?php if (isset($_GET['error'])) { ?>
@@ -64,19 +64,26 @@ if (
                         <?= htmlspecialchars($_GET['success']); ?>
                     </div>
                 <?php } ?>
-                <div class="mb-3" style="display: flex; text-align:center;">
-                    <label class="form-label" style="align-self: flex-end;">Tên Chương Trình</label>
-                    <input type="text" class="form-control" placeholder="Chương trình mới bạn muốn thêm..." name="program" style="width:80%; margin-left:3%;" required>
+
+                <div class="mb-3 row align-items-center">
+                    <label class="col-sm-4 col-form-label col-form-label-sm ">Tên Chương Trình</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" placeholder="Chương trình mới bạn muốn thêm..." name="program" required>
+                    </div>
                 </div>
 
-                <div class="mb-3" style="display: flex; text-align:center;">
-                    <label class="form-label" style="align-self: flex-end;">Mô Tả</label>
-                    <input type="text" class="form-control" placeholder="Nội dung chương trình...." name="description" style="width:80%; margin-left:14%;" required>
+                <div class="mb-3 row align-items-center">
+                    <label class="col-sm-4 col-form-label col-form-label-sm ">Mô Tả</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" placeholder="Nội dung chương trình...." name="description" required>
+                    </div>
                 </div>
 
-                <div class="mb-3" style="display: flex; text-align:center;">
-                    <label class="form-label" style="align-self: flex-end;">Phần Trăm</label>
-                    <input type="text" class="form-control" placeholder="Nhập theo mẫu: 0.1" name="percent" style="width:80%; margin-left:9.7%;" required>
+                <div class="mb-3 row align-items-center">
+                    <label class="col-sm-4 col-form-label col-form-label-sm ">Phần Trăm</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" placeholder="Nhập theo mẫu: 0.1" name="percent" required>
+                    </div>
                 </div>
                 <div class="mb-3" style="text-align:center;">
                     <button type="submit" class="btn btn-outline-primary">

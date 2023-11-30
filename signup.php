@@ -57,45 +57,57 @@ if (
                         <?= htmlspecialchars($_GET['success']); ?>
                     </div>
                 <?php } ?>
-                <div class="mb-3" style="display: flex; text-align:center;">
-                    <label for="exampleInputName1" class="form-label" style="align-self: flex-end;">Họ Và Tên</label>
-                    <input type="text" class="form-control" value="<?= $fullname ?>" name="fullname" id="exampleInputName1" style="width:65%; margin-left:15%;" placeholder="Tên đầy đủ của bạn..." required>
+
+                <div class="mb-3 row align-items-center">
+                    <label for="exampleInputName1" class="col-sm-4 col-form-label col-form-label-sm ">Họ Và Tên</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" value="<?= $fullname ?>" name="fullname" id="exampleInputName1" placeholder="Tên đầy đủ của bạn..." required>
+                    </div>
+
                 </div>
 
-                <div class="mb-3" style="display: flex; text-align:center;">
-                    <label for="exampleInputEmail1" class="form-label" style="align-self: flex-end;">Tên Đăng Nhập</label>
-                    <input type="text" class="form-control" value="<?= $un ?>" name="username" id="exampleInputEmail1" style="width:65%; margin-left:5%;" placeholder="Tên đăng nhập cho tài khoản..." required>
+                <div class="mb-3 row align-items-center">
+                    <label for="exampleInputEmail1" class="col-sm-4 col-form-label col-form-label-sm ">Tên Đăng Nhập</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" value="<?= $un ?>" name="username" id="exampleInputEmail1" placeholder="Tên đăng nhập cho tài khoản..." required>
+                    </div>
                 </div>
 
-                <div class="mb-3" style="display: flex; text-align:center;">
-                    <label for="exampleInputPassword1" class="form-label" style="align-self: flex-end;">Mật Khẩu</label>
-                    <input type="password" class="form-control" name="password" id="exampleInputPassword1" style="width:65%; margin-left:16%;" placeholder="Mật khẩu của bạn..." required>
+                <div class="mb-3 row align-items-center">
+                    <label for="exampleInputPassword1" class="col-sm-4 col-form-label col-form-label-sm ">Mật Khẩu</label>
+                    <div class="col-sm-8">
+                        <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Mật khẩu của bạn..." required>
+                    </div>
                 </div>
 
-                <div class="mb-3" style="display: flex; text-align:center;">
-                    <label for="exampleInputDOB1" class="form-label" style="align-self: flex-end;">Ngày Sinh</label>
-                    <input type="text" class="form-control" value="<?= $DOB ?>" name="DOB" placeholder="yyyy-mm-dd" id="exampleInputDOB1" style="width:65%; margin-left:15%;" required>
+                <div class="mb-3 row align-items-center">
+                    <label for="exampleInputDOB1" class="col-sm-4 col-form-label col-form-label-sm ">Ngày Sinh</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" value="<?= $DOB ?>" name="DOB" placeholder="yyyy-mm-dd" id="exampleInputDOB1" required>
+                    </div>
                 </div>
 
-                <div class="mb-3" style="display: flex; text-align:center;">
-                    <label class="form-label" style="align-self: flex-end;">Role</label>
-                    <select name="role" class="form-control" style="width:65%; margin-left:25.5%;">
-                        <?php if ($role == 'customer') { ?>
-                            <option value="">
-                                Select role
-                            </option>
-                            <option value="customer" selected>
-                                Customer
-                            </option>
-                        <?php } else { ?>
-                            <option value="" selected>
-                                Chọn vai trò
-                            </option>
-                            <option value="customer">
-                                Khách hàng
-                            </option>
-                        <?php } ?>
-                    </select>
+                <div class="mb-3 row align-items-center">
+                    <label class="col-sm-4 col-form-label col-form-label-sm ">Role</label>
+                    <div class="col-sm-8">
+                        <select name="role" class="form-control">
+                            <?php if ($role == 'customer') { ?>
+                                <option value="">
+                                    Select role
+                                </option>
+                                <option value="customer" selected>
+                                    Customer
+                                </option>
+                            <?php } else { ?>
+                                <option value="" selected>
+                                    Chọn vai trò
+                                </option>
+                                <option value="customer">
+                                    Khách hàng
+                                </option>
+                            <?php } ?>
+                        </select>
+                    </div>
                 </div>
                 <div class="mb-3" style="text-align:center;">
                     <button type="submit" class="btn btn-outline-primary">

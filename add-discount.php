@@ -58,7 +58,7 @@ if (
             </div>
         </nav>
         <div class="container">
-            <form action="php/add-discount.php?bookid=<?= $bookid ?>" method="POST" class="shadow p-4 rounded mt-5" style="windows: 90%; max-width: 50rem; margin:auto;">
+            <form action="php/add-discount.php?bookid=<?= $bookid ?>" method="POST" class="shadow p-4 rounded mt-5" style=" max-width: 40rem; margin:auto;">
                 <button type="button" class="btn btn-secondary mb-3">
                     <i class="bi bi-arrow-left"></i>
                     <a href="admin.php" style="text-decoration:none; color:#ffffff;"> Quay Lại</a>
@@ -76,44 +76,51 @@ if (
                         <?= htmlspecialchars($_GET['success']); ?>
                     </div>
                 <?php } ?>
-                <div class="mb-3" style="display: flex; text-align:center;">
-                    <label class="form-label" style="align-self: flex-end;">Chương Trình</label>
-                    <select name="discountID" class="form-control" style="width:80%; margin-left:4%;" required>
-                        <option value="">
-                            Chọn
-                        </option>
-                        <?php
-                        if ($discounts == 0) {
-                            # Do nothing
-                        } else {
-                            foreach ($discounts as $discount) {
-                                if ($discount_current == 0) { ?>
-                                    <option value="<?= $discount['ID'] ?>">
-                                        <?= $discount['D_Name'] ?>
-                                    </option>
-                                    <?php } else {
-                                    if ($discount_current['D_Name'] == $discount['D_Name']) {
-                                    ?>
-                                        <option selected value="<?= $discount['ID'] ?>">
-                                            <?= $discount['D_Name'] ?>
-                                        </option>
-                                    <?php } else { ?>
+
+                <div class="mb-3 row align-items-center">
+                    <label class="col-sm-4 col-form-label col-form-label-sm ">Chương Trình</label>
+                    <div class="col-sm-8">
+                        <select name="discountID" class="form-control" required>
+                            <option value="">
+                                Chọn
+                            </option>
+                            <?php
+                            if ($discounts == 0) {
+                                # Do nothing
+                            } else {
+                                foreach ($discounts as $discount) {
+                                    if ($discount_current == 0) { ?>
                                         <option value="<?= $discount['ID'] ?>">
                                             <?= $discount['D_Name'] ?>
                                         </option>
-                        <?php }
+                                        <?php } else {
+                                        if ($discount_current['D_Name'] == $discount['D_Name']) {
+                                        ?>
+                                            <option selected value="<?= $discount['ID'] ?>">
+                                                <?= $discount['D_Name'] ?>
+                                            </option>
+                                        <?php } else { ?>
+                                            <option value="<?= $discount['ID'] ?>">
+                                                <?= $discount['D_Name'] ?>
+                                            </option>
+                            <?php }
+                                    }
                                 }
-                            }
-                        } ?>
-                    </select>
+                            } ?>
+                        </select>
+                    </div>
                 </div>
-                <div class="mb-3" style="display: flex; text-align:center;">
-                    <label for="exampleInputDOB1" class="form-label" style="align-self: flex-end;">Ngày Bắt Đầu</label>
-                    <input type="text" class="form-control" value="" name="startdate" placeholder="yyyy-mm-dd" id="exampleInputSD1" style="width:80%; margin-left:4%;" required>
+                <div class="mb-3 row align-items-center">
+                    <label for="exampleInputDOB1" class="col-sm-4 col-form-label col-form-label-sm ">Ngày Bắt Đầu</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" value="" name="startdate" placeholder="yyyy-mm-dd" id="exampleInputSD1" required>
+                    </div>
                 </div>
-                <div class="mb-3" style="display: flex; text-align:center;">
-                    <label for="exampleInputDOB1" class="form-label" style="align-self: flex-end;">Ngày Kết Thúc</label>
-                    <input type="text" class="form-control" value="" name="enddate" placeholder="yyyy-mm-dd" id="exampleInputED1" style="width:80%; margin-left:3%;" required>
+                <div class="mb-3 row align-items-center">
+                    <label for="exampleInputDOB1" class="col-sm-4 col-form-label col-form-label-sm ">Ngày Kết Thúc</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" value="" name="enddate" placeholder="yyyy-mm-dd" id="exampleInputED1" required>
+                    </div>
                 </div>
                 <div class="mb-3" style="text-align:center;">
                     <button type="submit" class="btn btn-outline-primary">

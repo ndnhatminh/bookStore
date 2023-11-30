@@ -51,7 +51,7 @@ if (
             </div>
         </nav>
         <div class="container">
-            <form action="php/add-category.php" method="POST" class="shadow p-4 rounded mt-5" style=" max-width: 50rem; margin:auto;">
+            <form action="php/add-category.php" method="POST" class="shadow p-4 rounded mt-5" style=" max-width: 30rem; margin:auto;">
                 <h1 class="text-center pb-5 display-4 fs-3">
                     Thể Loại Sách Mới
                 </h1>
@@ -65,9 +65,11 @@ if (
                         <?= htmlspecialchars($_GET['success']); ?>
                     </div>
                 <?php } ?>
-                <div class="mb-3" style="display: flex; text-align:center;">
-                    <label class="form-label" style="align-self: flex-end;">Tên Thể Loại</label>
-                    <input type="text" class="form-control" name="category_name" placeholder="Nhập thể loại mới bạn muốn thêm..." style="width:80%; margin-left:4%;" required>
+                <div class="mb-3 row align-items-center">
+                    <label class="col-sm-4 col-form-label col-form-label-sm ">Tên Thể Loại</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" name="category_name" placeholder="Nhập thể loại mới bạn muốn thêm..." required>
+                    </div>
                 </div>
                 <div class="mb-3" style="text-align:center;">
                     <button type="submit" class="btn btn-outline-primary">

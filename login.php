@@ -36,19 +36,27 @@ if (
                         <?= htmlspecialchars($_GET['error']); ?>
                     </div>
                 <?php } ?>
-                <div class="mb-3" style="display: flex; text-align:center;">
-                    <label for="exampleInputEmail1" class="form-label" style="align-self: flex-end;">Tên Đăng Nhập</label>
-                    <input type="text" class="form-control" name="username" id="exampleInputEmail1" aria-describedby="emailHelp" style="width:65%; margin-left:3%;" placeholder="Tên đăng nhập của bạn..." required>
+
+                <div class="mb-3 row align-items-center">
+                    <label for="exampleInputEmail1" class="col-sm-4 col-form-label col-form-label-sm ">Tên Đăng Nhập</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" name="username" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tên đăng nhập của bạn..." required>
+                    </div>
                 </div>
 
-                <div class="mb-3" style="display: flex; text-align:center;">
-                    <label for="exampleInputPassword1" class="form-label" style="align-self: flex-end;">Mật Khẩu</label>
-                    <input type="password" class="form-control" name="password" id="exampleInputPassword1" style="width:65%; margin-left:14.5%;" required placeholder="Mật khẩu của bạn...">
+                <div class="mb-3 row align-items-center">
+                    <label for="exampleInputPassword1" class="col-sm-4 col-form-label col-form-label-sm ">Mật Khẩu</label>
+                    <div class="col-sm-8">
+                        <input type="password" class="form-control" name="password" id="exampleInputPassword1" required placeholder="Mật khẩu của bạn...">
+                    </div>
+
                 </div>
+
                 <div class="mb-3" style="text-align:center;">
                     <button type="submit" class="btn btn-outline-primary">
                         Đăng Nhập</button>
                 </div>
+
                 <div class="mb-3" style="text-align:center;">
                     <p>Nếu bạn chưa có tài khoản hãy <a href="signup.php">Đăng Ký?</a></p>
                 </div>

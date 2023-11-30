@@ -94,8 +94,8 @@ if (
             </div>
         </nav>
         <div class="container">
-            <form action="php/add-book.php" method="POST" enctype="multipart/form-data" class="shadow p-4 rounded mt-5" style="windows: 90%; max-width: 50rem; margin:auto">
-                <h1 class="text-center pb-5 display-4 fs-3">
+            <form action="php/add-book.php" method="POST" enctype="multipart/form-data" class="shadow p-4 rounded mt-5" style=" max-width: 40rem; margin:auto">
+                <h1 class="text-center pb-4 display-4 fs-3">
                     Sách Mới
                 </h1>
                 <?php if (isset($_GET['error'])) { ?>
@@ -108,70 +108,89 @@ if (
                         <?= htmlspecialchars($_GET['success']); ?>
                     </div>
                 <?php } ?>
-                <div class="mb-3" style="display: flex; text-align:center;">
-                    <label class="form-label" style="align-self: flex-end;">Mã Sách</label>
-                    <input type="text" class="form-control" value="<?= $BookID ?>" placeholder="Mã bạn muốn thêm..." name="book_id" style="width:80%; margin-left:11.5%;" required>
+
+                <div class="mb-3 row align-items-center">
+                    <label class="col-sm-4 col-form-label col-form-label-sm ">Mã Sách</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" value="<?= $BookID ?>" placeholder="Mã bạn muốn thêm..." name="book_id" required>
+                    </div>
                 </div>
 
-                <div class="mb-3" style="display: flex; text-align:center;">
-                    <label class="form-label" style="align-self: flex-end;">Tên Sách</label>
-                    <input type="text" class="form-control" value="<?= $title ?>" placeholder="Tên sách bạn muốn thêm..." name="book_title" style="width:80%; margin-left:11%;" required>
+                <div class="mb-3 row align-items-center">
+                    <label class="col-sm-4 col-form-label col-form-label-sm ">Tên Sách</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" value="<?= $title ?>" placeholder="Tên sách bạn muốn thêm..." name="book_title" required>
+                    </div>
                 </div>
 
-                <div class="mb-3" style="display: flex; text-align:center;">
-                    <label class="form-label" style="align-self: flex-end;">Năm Xuất Bản</label>
-                    <input type="text" class="form-control" value="<?= $publication ?>" placeholder="Năm xuất bản của sách đó..." name="book_publication" style="width:80%; margin-left:6%;" required>
+                <div class="mb-3 row align-items-center">
+                    <label class="col-sm-4 col-form-label col-form-label-sm ">Năm Xuất Bản</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" value="<?= $publication ?>" placeholder="Năm xuất bản của sách đó..." name="book_publication" required>
+                    </div>
                 </div>
 
-                <div class="mb-3" style="display: flex; text-align:center;">
-                    <label class="form-label" style="align-self: flex-end;">Nhà Xuất Bản</label>
-                    <input type="text" class="form-control" value="<?= $publisher ?>" placeholder="Nhà xuất bản sách đó..." name="book_publisher" style="width:80%; margin-left:6.5%;" required>
+                <div class="mb-3 row align-items-center">
+                    <label class="col-sm-4 col-form-label col-form-label-sm ">Nhà Xuất Bản</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" value="<?= $publisher ?>" placeholder="Nhà xuất bản sách đó..." name="book_publisher" required>
+                    </div>
                 </div>
 
-                <div class="mb-3" style="display: flex; text-align:center;">
-                    <label class="form-label" style="align-self: flex-end;">Mô Tả</label>
-                    <input type="text" class="form-control" value="<?= $desc ?>" name="book_description" placeholder="Giới thiệu sơ lượt..." style="width:80%; margin-left:14%;" required>
+                <div class="mb-3 row align-items-center">
+                    <label class="col-sm-4 col-form-label col-form-label-sm ">Mô Tả</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" value="<?= $desc ?>" name="book_description" placeholder="Giới thiệu sơ lượt..." required>
+                    </div>
                 </div>
 
-                <div class="mb-3" style="display: flex; text-align:center;">
-                    <label class="form-label" style="align-self: flex-end;">Tác Giả</label>
-                    <input type="text" class="form-control" value="<?= $author ?>" name="book_author" placeholder="Tác giả..." style="width:80%; margin-left:12.5%;" required>
+                <div class="mb-3 row align-items-center">
+                    <label class="col-sm-4 col-form-label col-form-label-sm ">Tác Giả</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" value="<?= $author ?>" name="book_author" placeholder="Tác giả..." required>
+                    </div>
                 </div>
 
-                <div class="mb-3" style="display: flex; text-align:center;">
-                    <label class="form-label" style="align-self: flex-end;">Giá</label>
-                    <input type="text" class="form-control" value="<?= $listprice ?>" name="book_price" placeholder="Đơn vị VNĐ..." style="width:80%; margin-left:16.5%;" required>
+                <div class="mb-3 row align-items-center">
+                    <label class="col-sm-4 col-form-label col-form-label-sm ">Giá</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" value="<?= $listprice ?>" name="book_price" placeholder="Đơn vị VNĐ..." required>
+                    </div>
                 </div>
 
-                <div class="mb-3" style="display: flex; text-align:center;">
-                    <label class="form-label" style="align-self: flex-end;">Thể Loại</label>
-                    <select name="book_category" class="form-control" style="width:80%; margin-left:11.5%;">
-                        <option value="">
-                            Chọn thể loại
-                        </option>
-                        <?php
-                        if ($categories == 0) {
-                            # Do nothing
-                        } else {
-                            foreach ($categories as $category) {
-                                if ($category_name == $category['C_Name']) {
-                        ?>
-                                    <option selected value="<?= $category['C_Name'] ?>">
-                                        <?= $category['C_Name'] ?>
-                                    </option>
-                                <?php } else { ?>
-                                    <option value="<?= $category['C_Name'] ?>">
-                                        <?= $category['C_Name'] ?>
-                                    </option>
-                        <?php }
-                            }
-                        } ?>
-                    </select>
+                <div class="mb-3 row align-items-center">
+                    <label class="col-sm-4 col-form-label col-form-label-sm ">Thể Loại</label>
+                    <div class="col-sm-8">
+                        <select name="book_category" class="form-control">
+                            <option value="">
+                                Chọn thể loại
+                            </option>
+                            <?php
+                            if ($categories == 0) {
+                                # Do nothing
+                            } else {
+                                foreach ($categories as $category) {
+                                    if ($category_name == $category['C_Name']) {
+                            ?>
+                                        <option selected value="<?= $category['C_Name'] ?>">
+                                            <?= $category['C_Name'] ?>
+                                        </option>
+                                    <?php } else { ?>
+                                        <option value="<?= $category['C_Name'] ?>">
+                                            <?= $category['C_Name'] ?>
+                                        </option>
+                            <?php }
+                                }
+                            } ?>
+                        </select>
+                    </div>
                 </div>
 
-                <div class="mb-3" style="display: flex; text-align:center;">
-                    <label class="form-label" style="align-self: flex-end;">Bìa Sách</label>
-                    <input type="file" class="form-control" value="<?= $cover ?>" name="book_cover" style="width:80%; margin-left:11.5%;" required>
+                <div class="mb-3 row align-items-center">
+                    <label class="col-sm-4 col-form-label col-form-label-sm ">Bìa Sách</label>
+                    <div class="col-sm-8">
+                        <input type="file" class="form-control" value="<?= $cover ?>" name="book_cover" required>
+                    </div>
                 </div>
                 <div class="mb-3" style="text-align:center;">
                     <button type="submit" class="btn btn-outline-primary">
