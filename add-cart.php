@@ -72,30 +72,30 @@ $books = get_book_cart($conn, $username);
 </head>
 <body>
     <div>
-        <nav class="navbar navbar-expand-lg bg-light" style="padding: 0 7%; width: 100%; border-radius: 0;">
+    <nav class="navbar navbar-expand-lg" style="padding: 0 7%; position: fixed; z-index: 999; width: 100%; border-radius: 0; background-color: #67D7FF;">
             <div class="container-fluid">
-                <a class="navbar-brand" style="font-size:20px;" href="index.php">Online Book Store</a>
+                <a class="navbar-brand" href="index.php" style="font-size: 20px;">Thư Viện Xanh</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-size: 20px;">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="index.php">Store</a>
+                            <a class="nav-link active" aria-current="page" href="index.php">Cửa hàng</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link" href="contact.php">Liên hệ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link" href="about.php">Thông tin</a>
                         </li>
                         <li class="nav-item">
                             <?php if (isset($_SESSION['username'])&&$role=='staff') {?>
                                 <a class="nav-link" href="admin.php">Admin</a>
                             <?php }else if (isset($_SESSION['username'])&&$role=='customer'){ ?>
-                                <a class="nav-link" href="logout.php">Logout</a>
+                                <a class="nav-link" href="logout.php">Đăng xuất</a>
                             <?php } else { ?>
-                                <a class="nav-link" href="login.php">Login</a>
+                                <a class="nav-link" href="login.php">Đăng nhập</a>
                             <?php } ?>
                         </li>
                         
@@ -130,7 +130,7 @@ $books = get_book_cart($conn, $username);
                                                 <div class="d-flex align-items-center">
                                                     <div> <img class="pic" src="uploads/cover/<?=$book['cover']?>" alt=""> </div>
                                                     <div class="ps-3 d-flex flex-column justify-content">
-                                                        <p class="fw-bold"><span class="ps-1"><?=$book['Title']?></span></p> <small class=" d-flex"> <span class=" text-muted">Author: </span> <span class=" fw-bold"><?=$book['Author']?></span> </small> <small class=""> <span class=" text-muted">Category:</span> <span class=" fw-bold"><?=get_category_by_BookID($conn,$book['BookID'])['C_Name']?></span> </small>
+                                                        <p class="fw-bold"><span class="ps-1"><?=$book['Title']?></span></p> <small class=" d-flex"> <span class=" text-muted">Tác giả: </span> <span class=" fw-bold"><?=$book['Author']?></span> </small> <small class=""> <span class=" text-muted">Thể loại:</span> <span class=" fw-bold"><?=get_category_by_BookID($conn,$book['BookID'])['C_Name']?></span> </small>
                                                     </div>
                                                 </div>
                                             </td>
@@ -147,8 +147,8 @@ $books = get_book_cart($conn, $username);
                                             <td>
                                                 <form action="php/update-quantity.php?id=<?=$book['BookID']?>"
                                                       method="POST">
-                                                    <div class="d-flex align-items-center"> <span class="pe-3 text-muted">Quantity</span> <span class="pe-3"> <input name="quantity" class="ps-2" type="number" placeholder="" value="<?=is_book_contain($conn, $book['BookID'], $username)?>" min="0"></span>
-                                                        <button type="submit" class="btn btn-info">Update</button>
+                                                    <div class="d-flex align-items-center"> <span class="pe-3 text-muted">Số lượng</span> <span class="pe-3"> <input name="quantity" class="ps-2" type="number" placeholder="" value="<?=is_book_contain($conn, $book['BookID'], $username)?>" min="0"></span>
+                                                        <button type="submit" class="btn btn-info">Cập nhật</button>
                                                     </div>
                                                 </form>
                                             </td>
@@ -168,30 +168,30 @@ $books = get_book_cart($conn, $username);
             <?php } ?>
         </div>
         <div class="col-lg-4 payment-summary">
-            <p class="fw-bold pt-lg-0 pt-4 pb-2">Payment Summary</p>
+            <p class="fw-bold pt-lg-0 pt-4 pb-2">Tổng giá</p>
             <div class="card px-md-3 px-2 pt-4">
                 <div class="unregistered mb-4"> <span class="py-1"><?=$username?></span> </div>
-                <div class="d-flex justify-content-between pb-3"> <small class="text-muted">Transaction code</small>
+                <div class="d-flex justify-content-between pb-3"> <small class="text-muted">Mã giao dịch</small>
                     <p class="">VC115665</p>
                 </div>
-                <div class="d-flex justify-content-between b-bottom"> <input type="text" class="ps-2" placeholder="COUPON CODE">
-                    <div class="btn btn-primary">Apply</div>
+                <div class="d-flex justify-content-between b-bottom"> <input type="text" class="ps-2" placeholder="Mã giảm giá">
+                    <div class="btn btn-primary">Nhập</div>
                 </div>
                 <div class="d-flex flex-column b-bottom">
-                    <div class="d-flex justify-content-between py-3"> <small class="text-muted">Order Summary</small>
+                    <div class="d-flex justify-content-between py-3"> <small class="text-muted">Tổng đơn hàng</small>
                         <p>$<?=$total?></p>
                     </div>
-                    <div class="d-flex justify-content-between pb-3"> <small class="text-muted">Additional Service 10% VAT</small>
+                    <div class="d-flex justify-content-between pb-3"> <small class="text-muted">Thuế VAT (10%)</small>
                         <p>$<?=$total*0.1?></p>
                     </div>
-                    <div class="d-flex justify-content-between"> <small class="text-muted">Total Amount</small>
+                    <div class="d-flex justify-content-between"> <small class="text-muted">Tổng cộng</small>
                         <p>$<?=$total*1.1?></p>
                     </div>
                 </div>
-                <div class="sale my-3"> <span>sale<span class="px-1">expiring</span><span>in</span>:</span><span class="red">21<span class="ps-1">hours</span>,31<span class="ps-1 ">minutes</span></span> </div>
+                <div class="sale my-3"> <span>Đơn hàng<span class="px-1">hết hạn</span><span>trong</span>:</span><span class="red">21<span class="ps-1">giờ</span>,31<span class="ps-1 ">phút</span></span> </div>
                 <form action="php/payment.php" method="POST">
                     <input type="text" hidden name="payment" value="<?=$username?>">
-                    <button type="submit" class="btn btn-primary mb-2 w-100">PAYMENT</button>
+                    <button type="submit" class="btn btn-primary mb-2 w-100">Thanh toán</button>
                 </form>
                 
             </div>
