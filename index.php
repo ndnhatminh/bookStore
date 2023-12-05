@@ -48,30 +48,30 @@ if(isset($_SESSION['role'])){
 </head>
 <body>
     <div>
-        <nav class="navbar navbar-expand-lg bg-light" style="padding: 0 7%; position: fixed; z-index: 999; width: 100%; border-radius: 0;">
+        <nav class="navbar navbar-expand-lg" style="padding: 0 7%; position: fixed; z-index: 999; width: 100%; border-radius: 0; background-color: #67D7FF;">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.php" style="font-size: 20px;">Online Book Store</a>
+                <a class="navbar-brand" href="index.php" style="font-size: 20px;">Thư Viện Xanh</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-size: 20px;">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.php">Store</a>
+                            <a class="nav-link active" aria-current="page" href="index.php">Cửa hàng</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link" href="contact.php">Liên hệ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link" href="about.php">Thông tin</a>
                         </li>
                         <li class="nav-item">
                             <?php if (isset($_SESSION['username'])&&$role=='staff') {?>
                                 <a class="nav-link" href="admin.php">Admin</a>
                             <?php }else if (isset($_SESSION['username'])&&$role=='customer'){ ?>
-                                <a class="nav-link" href="logout.php">Logout</a>
+                                <a class="nav-link" href="logout.php">Đăng xuất</a>
                             <?php } else { ?>
-                                <a class="nav-link" href="login.php">Login</a>
+                                <a class="nav-link" href="login.php">Đăng nhập</a>
                             <?php } ?>
                         </li>
                         <?php if ($role=='customer') { ?>
@@ -120,7 +120,7 @@ if(isset($_SESSION['role'])){
                 <input type="text" 
                        class="form-control" 
                        name="key"
-                       placeholder="Search Book..." 
+                       placeholder="Nhập tên sách cần tìm" 
                        aria-label="Search Book..." 
                        aria-describedby="basic-addon2">
 
@@ -130,7 +130,38 @@ if(isset($_SESSION['role'])){
                 </button>
             </div>
         </form>
-        <div class="d-flex pt-3">
+    <div class="category">
+    <div class="row">
+        <!-- List of categories -->
+        <div class="col-md-6">
+            <div class="list-group">
+                <?php if ($categories==0){
+                    // Do nothing
+                } else { ?>
+                    <a href="#" class="list-group-item list-group-item-action active">Thể loại</a>
+                    <?php foreach ($categories as $category) { ?>
+                        <a href="category.php?id=<?=$category['ID']?>" class="list-group-item list-group-item-action"><?=$category['C_Name']?></a>
+                    <?php } ?>
+                <?php } ?>
+            </div>
+        </div>
+
+        <!-- List of authors -->
+        <div class="col-md-6">
+            <div class="list-group mt-5">
+                <?php if ($authors==0){
+                    // Do nothing
+                } else { ?>
+                    <a href="#" class="list-group-item list-group-item-action active">Tác giả</a>
+                    <?php foreach ($authors as $author) { ?>
+                        <a href="author.php?author=<?=$author['Author']?>" class="list-group-item list-group-item-action"><?=$author['Author']?></a>
+                    <?php } ?>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="d-flex pt-3">
             <?php if ($books == 0){ ?>
             <div class="alert alert-warning p-5 text-center" 
                  role="alert">
@@ -150,9 +181,9 @@ if(isset($_SESSION['role'])){
                                 <div class="card-body">
                                     <h5 class="card-title"><?=$book['Title']?></h5>
                                     <p class="card-text">
-                                        <i><b>By: <?=$book['Author']?><br></b></i>
+                                        <i><b>Tác giả: <?=$book['Author']?><br></b></i>
                                         <?=$book['des']?><br>
-                                        <i><b>Category: <?=get_category_by_BookID($conn,$book['BookID'])['C_Name']?><br></b></i>
+                                        <i><b>Thể loại: <?=get_category_by_BookID($conn,$book['BookID'])['C_Name']?><br></b></i>
                                     </p>
                                     <p style="font-size: 20px;">
                                         <b>$ <?=$book['List_price']?></b>
@@ -164,11 +195,11 @@ if(isset($_SESSION['role'])){
                                     <?php } ?>
                                     <div style=" bottom: 0;">
                                     <a href="uploads/cover/<?=$book['cover']?>"
-                                    class="btn btn-success" style="width: 49%;">Open</a>
+                                    class="btn btn-success" style="width: 49%;">Mở</a>
 
                                     <a href="uploads/cover/<?=$book['cover']?>"
                                     class="btn btn-primary" style="width: 49%;"
-                                    download=<?=$book['Title']?>>Download</a>
+                                    download=<?=$book['Title']?>>Tải về</a>
                                     <br>
                                     <?php if($role=='staff') {?>
                                         <!-- Do nothing -->
@@ -177,7 +208,7 @@ if(isset($_SESSION['role'])){
                                             name="bookid"
                                             value="<?=$book['BookID']?>"
                                             hidden>
-                                        <button type="submit" class="btn btn-info mt-1 w-100">Add to cart</button>
+                                        <button type="submit" class="btn btn-info mt-1 w-100">Thêm vào giỏ</button>
                                     <?php } ?>
                                     </div>
                                 </div>
@@ -186,38 +217,13 @@ if(isset($_SESSION['role'])){
                     <?php } ?>
                 </div>
             <?php } ?>
-            <div class="category">
-                <!-- List of categories -->
-                <div class="list-group">
-                    <?php if ($categories==0){
-                        // Do nothing
-                    }else{ ?>
-                    <a href="#"
-                       class="list-group-item list-group-item-action active"
-                       >Category</a>
-                    <?php foreach ($categories as $category) {?>
-                        <a href="category.php?id=<?=$category['ID']?>"
-                           class="list-group-item list-group-item-action"
-                           ><?=$category['C_Name']?></a>
-                    <?php } } ?>
-                </div>
-
-                <!-- List of authors -->
-                <div class="list-group mt-5">
-                    <?php if ($authors==0){
-                        // Do nothing
-                    }else{ ?>
-                    <a href="#"
-                       class="list-group-item list-group-item-action active"
-                       >Author</a>
-                    <?php foreach ($authors as $author) {?>
-                        <a href="author.php?author=<?=$author['Author']?>"
-                           class="list-group-item list-group-item-action"
-                           ><?=$author['Author']?></a>
-                    <?php } } ?>
-                </div>
-            </div>
+            
         </div>
     </div>
+    <footer class="bg-dark text-light mt-5">
+        <div class="container py-3">
+            <p class="text-center mb-0">Thư Viện Xanh</p>
+        </div>
+    </footer>
 </body>
 </html>
