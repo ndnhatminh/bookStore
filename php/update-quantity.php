@@ -23,7 +23,7 @@ if (isset($_SESSION['username'])&&
             $stmt = $conn->prepare($sql);
             $stmt->execute();
             $book = get_book($conn, $bookid);
-            $sm = 'Successfully update the quantity of book ';
+            $sm = 'Cập nhật số lượng sách thành công: ';
             $sm .= $book['Title'];
             header("Location: ../add-cart.php?success=$sm");
             exit;
