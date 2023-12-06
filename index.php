@@ -130,8 +130,8 @@ if(isset($_SESSION['role'])){
                 </button>
             </div>
         </form>
-    <div class="category">
-    <div class="row">
+    <!-- <div class="category"> -->
+    <div class="row" >
         <!-- List of categories -->
         <div class="col-md-6">
             <div class="list-group">
@@ -148,7 +148,7 @@ if(isset($_SESSION['role'])){
 
         <!-- List of authors -->
         <div class="col-md-6">
-            <div class="list-group mt-5">
+            <div class="list-group">
                 <?php if ($authors==0){
                     // Do nothing
                 } else { ?>
@@ -160,66 +160,66 @@ if(isset($_SESSION['role'])){
             </div>
         </div>
     </div>
-</div>
-<div class="d-flex pt-3">
-            <?php if ($books == 0){ ?>
-            <div class="alert alert-warning p-5 text-center" 
-                 role="alert">
-                 <img src="img/nothing-icon.jpg" 
-                      width="100">
-                <br>
-                There is no book in the database
-            </div>
-            
-            <?php }else{?>
-                <div class="pdf-list d-flex flex-wrap">
-                    <?php foreach ($books as $book) { ?>
-                        <form action="add-cart.php?add=<?=$book['BookID']?>" method="POST">
-                            <div class="card m-1" style="min-height: 800px;">
-                                <img src="uploads/cover/<?=$book['cover']?>"
-                                    class="card-img-top">
-                                <div class="card-body">
-                                    <h5 class="card-title"><?=$book['Title']?></h5>
-                                    <p class="card-text">
-                                        <i><b>Tác giả: <?=$book['Author']?><br></b></i>
-                                        <?=$book['des']?><br>
-                                        <i><b>Thể loại: <?=get_category_by_BookID($conn,$book['BookID'])['C_Name']?><br></b></i>
-                                    </p>
-                                    <p style="font-size: 20px;">
-                                        <b>$ <?=$book['List_price']?></b>
-                                    </p>
-                                    <?php if (get_dis_by_book($conn, $book['BookID'])){?>
+    <div class="justify-content-center d-flex">
+                <?php if ($books == 0){ ?>
+                <div class="alert alert-warning p-5 text-center" 
+                     role="alert">
+                     <img src="img/nothing-icon.jpg" 
+                          width="100">
+                    <br>
+                    There is no book in the database
+                </div>
+                
+                <?php }else{?>
+                    <div class="justify-content-center pdf-list d-flex flex-wrap">
+                        <?php foreach ($books as $book) { ?>
+                            <form action="add-cart.php?add=<?=$book['BookID']?>" method="POST">
+                                <div class="card m-1" style="min-height: 800px;">
+                                    <img src="uploads/cover/<?=$book['cover']?>"
+                                        class="card-img-top">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><?=$book['Title']?></h5>
+                                        <p class="card-text">
+                                            <i><b>Tác giả: <?=$book['Author']?><br></b></i>
+                                            <?=$book['des']?><br>
+                                            <i><b>Thể loại: <?=get_category_by_BookID($conn,$book['BookID'])['C_Name']?><br></b></i>
+                                        </p>
                                         <p style="font-size: 20px;">
-                                            <b style="color: red;">Sale off <?=get_dis_by_book($conn, $book['BookID'])['Percents']*100?>%</b>
-                                        </p> 
-                                    <?php } ?>
-                                    <div style=" bottom: 0;">
-                                    <a href="uploads/cover/<?=$book['cover']?>"
-                                    class="btn btn-success" style="width: 49%;">Mở</a>
-
-                                    <a href="uploads/cover/<?=$book['cover']?>"
-                                    class="btn btn-primary" style="width: 49%;"
-                                    download=<?=$book['Title']?>>Tải về</a>
-                                    <br>
-                                    <?php if($role=='staff') {?>
-                                        <!-- Do nothing -->
-                                    <?php } else {?>
-                                        <input type="text"
-                                            name="bookid"
-                                            value="<?=$book['BookID']?>"
-                                            hidden>
-                                        <button type="submit" class="btn btn-info mt-1 w-100">Thêm vào giỏ</button>
-                                    <?php } ?>
+                                            <b>$ <?=$book['List_price']?></b>
+                                        </p>
+                                        <?php if (get_dis_by_book($conn, $book['BookID'])){?>
+                                            <p style="font-size: 20px;">
+                                                <b style="color: red;">Sale off <?=get_dis_by_book($conn, $book['BookID'])['Percents']*100?>%</b>
+                                            </p> 
+                                        <?php } ?>
+                                        <div style=" bottom: 0;">
+                                        <a href="uploads/cover/<?=$book['cover']?>"
+                                        class="btn btn-success" style="width: 49%;">Mở</a>
+    
+                                        <a href="uploads/cover/<?=$book['cover']?>"
+                                        class="btn btn-primary" style="width: 49%;"
+                                        download=<?=$book['Title']?>>Tải về</a>
+                                        <br>
+                                        <?php if($role=='staff') {?>
+                                            <!-- Do nothing -->
+                                        <?php } else {?>
+                                            <input type="text"
+                                                name="bookid"
+                                                value="<?=$book['BookID']?>"
+                                                hidden>
+                                            <button type="submit" class="btn btn-info mt-1 w-100">Thêm vào giỏ</button>
+                                        <?php } ?>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </form>
-                    <?php } ?>
-                </div>
-            <?php } ?>
-            
+                            </form>
+                        <?php } ?>
+                    </div>
+                <?php } ?>
+                
+            </div>
         </div>
-    </div>
+</div>
     <footer class="bg-dark text-light mt-5">
         <div class="container py-3">
             <p class="text-center mb-0">Thư Viện Xanh</p>
