@@ -89,54 +89,113 @@ INSERT INTO Categories (C_Name)
 VALUES ('Marketing');
 
 INSERT INTO Book
-VALUES ('1501','Muôn Kiếp Nhân Sinh','John Vu',2023,'Tổng Hợp Thành Phố Hồ Chí Minh',190000,'search1.jpg','mô tả');
+VALUES ('1501','Muôn Kiếp Nhân Sinh','John Vu',2023,'NXB Tổng Hợp TPHCM',190000,'search1.jpg','Thông điệp quan trọng nhất của tác phẩm Muôn kiếp nhân sinh (Many times – Many lives) là nguồn gốc và cách thức vận hành của luật nhân quả và luân hồi của vũ trụ.');
 INSERT INTO Book
-VALUES ('1001','Keep Sharp','Sanjay Gupta M.D.',2021,'Simon & Schuster',140000,'db1.jpg','Keep your brain young, healthy, and sharp with this science-driven guide to protecting your mind from decline by neurosurgeon and CNN chief medical correspondent Dr. Sanjay Gupta.');
+VALUES ('1502','Giải Tích 12','Bộ Giáo Dục Và Đào Tạo',2020,'Nhà Xuất Bản Giáo Dục',39000,'search2.jpg','Sách giáo khoa Giải tích 12 cơ bản (SGK GT 12 CB) gồm 164 trang do nhà xuất bản Giáo dục Việt Nam phát hành, đây là cuốn SGK Giải tích 12 chính thống được dành cho học sinh khối 12.');
 INSERT INTO Book
-VALUES ('1002','The Organized Mind','Daniel J. Levitin',2014,'Luke Daniels',170000,'db2.jpg','New York Times best-selling author and neuroscientist Daniel J. Levitin shifts his keen insights from your brain on music to your brain in a sea of details.');
+VALUES ('1503','Cây Cam Ngọt Của Tôi','José Mauro de Vasconcelos',2020,'Nhã Nam',75000,'search3.jpg','Một cách nhìn cuộc sống gần như hoàn chỉnh từ con mắt trẻ thơ… có sức mạnh sưởi ấm và làm tan nát cõi lòng, dù người đọc ở lứa tuổi nào.');
 INSERT INTO Book
-VALUES ('1003','The Defining Decade','Meg Jay',2021,'Twelve',120000,'db3.jpg','New York Times best-selling psychologist Dr. Meg Jay uses real stories from real lives to provide smart, compassionate, and constructive advice about the crucial (and difficult) years we cannot afford to miss.');
+VALUES ('1504','Thỏ 7 Màu','HUỲNH THÁI NGỌC',2023,'Công Ty Cổ Phần Time Books',99000,'search4.jpg','Thỏ Bảy Màu đơn giản chỉ là một con thỏ trắng với sự dở hơi, ngang ngược nhưng đáng yêu vô cùng tận.');
 INSERT INTO Book
-VALUES ('1101','The Gilded Ones','Namina Forna',2021,'Shayna Small',160000,'db3.jpg','INSTANT NEW YORK TIMES BESTSELLER NAMED ONE OF THE BEST BOOKS OF THE YEAR BY TEEN VOGUE');
+VALUES ('1505','Nhật Ký Targot','Brigit Esselmont',2021,'NXB Thế Giới',179000,'search5.jpg','Tarot không phải một trò chơi dự đoán tương lai, mà là một công cụ tạo ra tương lai. Cuốn sách “Nhật ký Tarot” sẽ giúp bạn đặt chân qua ngưỡng cửa của bộ môn khoa học huyền bí, đầy mê hoặc này.');
 INSERT INTO Book
-VALUES ('1102','The Annotated American Gods','Neil Gaiman',2020,'William Morrow',230000,'db4.jpg','Destined to be a treasure for the millions of fans who made American Gods an internationally bestselling phenomenon, this beautifully designed and illustrated collectible edition of Neil Gaiman’s revered masterpiece features enlightening and incisive notes throughout by award-winning annotator and editor Leslie S. Klinger.');
+VALUES ('1506','Thay Đổi Cuộc Sống Với Thần Số Học','Lê Đỗ Quỳnh Hương',2020,'NXB Tổng Hợp TPHCM',76000,'search6.jpg','Cuốn sách Thay đổi cuộc sống với Nhân số học là tác phẩm được chị Lê Đỗ Quỳnh Hương phát triển từ tác phẩm gốc “The Complete Book of Numerology” của tiến sỹ David A. Phillips.');
 INSERT INTO Book
-VALUES ('1201','Masterchef Cookbook','JoAnn Cianciulli',2010,'Rodale Books',190000,'db5.jpg','SUPERANNO This is the official companion book to Master Chef, the Fox reality cooking competition premiering in July 2010 that pits 50 amateur cooks from across the country in a head-to-head battle for culinary supremacy.');
+VALUES ('1507','Cambridge IELTS 18 Academic','Nhiều Tác Giả',2023,'Cambridge',161000,'search7.jpeg','Liệu bạn có đang học tiếng Anh để thi IELTS đúng phương pháp??? Tất cả sẽ được giải quyết khi bạn chọn được cho mình bộ sách IELTS đích thực.');
 INSERT INTO Book
-VALUES ('1202','Recipes from My Home Kitchen','Christine Ha',2013,'Rodale Books',220000,'db5.jpg','Easy Vietnamese comfort food recipes from the winner of MasterChef Season 3.');
+VALUES ('1508','Bí mật - Traffic - Bìa Cứng','Nguyễn Quang Ngọc',2023,'Thế Giới',241000,'search20.jpeg','Bí Mật Traffic được viết ra để giúp bạn đưa thông điệp về sản phẩm và dịch vụ của bạn đến được với thế giới.');
 INSERT INTO Book
-VALUES ('1203','The Chinese Home Kitchen','Chyou Huang',2022,'Chyou Huang',140000,'db6.jpg','Full-Color Premium Printing Edition with Vibrant Color Pictures of Each Finished Meals for the Recipes');
+VALUES ('1509','Sức Mạnh Của Ngôn Từ','Don Gabor',2022,'NXB Tổng Hợp TPHCM',84600,'search12.jpeg','Quyển sách Sức mạnh của Ngôn từ được chia làm ba phần gồm 20 chương với các nội dung áp dụng trong công việc, quan hệ khách hàng - nhà cung cấp và trong giao tiếp xã hội với hàng trăm gợi ý, tình huống cùng các ví dụ thực tế.');
 INSERT INTO Book
-VALUES ('1204','My Modern American Table','Shaun O Neale',2017,'Abrams',250000,'db7.jpg','Viewers fell in love with Shaun O’Neale on Season 7 of MasterChef. In his debut cookbook, O’Neale presents his take on modern American cuisine with international influences. It’s experimental, it’s edgy, and it’s full of big flavors.');
+VALUES ('1510','Rèn Luyện Tư Duy Phản Biện','Albert Rutherford',2020,'NXB Phụ Nữ Việt Nam',69000,'search13.jpeg','Như bạn có thể thấy, chìa khoá để trở thành một người có tư duy phản biện tốt chính là sự nhận thức.');
 INSERT INTO Book
-VALUES ('1205','Gordon Ramsay Quick and Delicious','Gordon Ramsay',2020,'Grand Central Publishing',290000,'db8.jpg','Create chef-quality food without spending hours in the kitchen -- these are the recipes and straightforward tips you need to make good food fast.');
+VALUES ('1511','25 Chuyên Đề Ngữ Pháp Tiếng Anh Trọng Tâm','Trang Anh',2018,'NXB Đại học sư phạm',80000,'search8.jpeg','Các chuyên đề ngữ pháp trọng tâm được trình bày đơn giản, dễ hiểu cùng với hệ thống bài tập và từ vựng phong phú.');
 INSERT INTO Book
-VALUES ('1301','Over the Edge of the World','Laurence Bergreen',2009,'Mariner Books',200000,'db9.jpg','“A first-rate historical page turner.” —New York Times Book Review');
+VALUES ('1512','Hồi Ký Lý Quang Diệu','Lý Quang Diệu',2023,'Thế Giới',100000,'search16.jpeg','Sau khi lãnh đạo đất nước Singapore độc lập ở cương vị Thủ tướng trong vòng 3 thập kỷ, năm 1990, Lý Quang Diệu lui về làm cố vấn và dành nhiều tâm sức thu thập tài liệu để viết nên bộ hồi ký này, nhìn lại toàn bộ cuộc đời ông.');
 INSERT INTO Book
-VALUES ('1401','Long Shadows (Memory Man Series)','David Baldacci',2022,'Grand Central Publishing',140000,'db10.jpg','From the author of The 6:20 Man, “Memory Man” Amos Decker—an FBI consultant with perfect recall');
+VALUES ('1513','Tiếp Thị 5.0: Công Nghệ Vị Nhân Sinh','Philip Kotler, Hermawan Kartajaya, Iwan Setiawan',2021,'NXB Trẻ',180000,'search21.jpeg','Trong Tiếp thị 5.0, cha đẻ của tiếp thị hiện đại, Philip Kotler giải thích cách các nhà tiếp thị có thể ứng dụng công nghệ để giải quyết nhu cầu của khách hàng và tạo nên khác biệt.');
+INSERT INTO Book
+VALUES ('1514','The Big Four - 4 Đại Gia Kiểm Toán','Ian D Gow, Stuart Kells',2020,'NXB Tài Chính',92000,'search25.jpeg','“Big Four” hình thành thế nào?');
+INSERT INTO Book
+VALUES ('1515','Người Mở Khóa Lãng Du','Lê Xuân Khoa, Xuân Chi, Thanh Huyền',2020,'NXB Thế Giới',82000,'search15.jpeg','Cánh cửa thời gian trở về lịch sử của dân tộc như được mở ra bởi câu chuyện về cuộc đời của một nhân vật gắn liền với sự đổi thay, chuyển mình của đất nước.');
+INSERT INTO Book
+VALUES ('1516','Điềm Tĩnh Và Nóng Giận','Tạ Quốc Kế',2021,'NXB Thanh Niên',67000,'search14.jpeg','Trong cuộc sống thường ngày, chúng ta thường nổi giận vì nhiều nguyên do: công việc không suôn sẻ, chúng ta tức giận; bị người khác hiểu nhầm, chúng ta tức giận.');
+INSERT INTO Book
+VALUES ('1517','Bill Gates: Tham Vọng Lớn Lao','James Wallace, Jim Erickson',2017,'NXB Thế Giới',194000,'search24.jpeg','Cuốn sách này mở ra một câu chuyện sinh động và chân thực nhất về sự nổi lên của một thiên tài độc đoán, cách thức ông làm thay đổi cả một nền công nghiệp máy tính, và lý do tại sao mọi người quyết tâm tìm hiểu ông bằng được.');
+
+
+-- INSERT INTO category (name, status) VALUES
+--     ('Sách giáo khoa', 1),
+--     ('Tâm lý - Triết học', 1),
+--     ('Truyện', 1),
+--     ('Nhật ký', 1),
+--     ('Học thuật', 1),
+--     ('Kỹ năng sống', 1),
+--     ('Ngôn tình', 1),
+--     ('Chính trị', 1),
+--     ('Ngoại ngữ', 1),
+--     ('Kinh tế', 1),
+--     ('Quản trị - Lãnh đạo', 1),
+--     ('Marketing', 1);
+
+-- INSERT INTO book (name, price, image, description, status, category_id) VALUES
+--     ('Giải Tích 12', 39000, 'search2.jpg', 'Mô tả sách:...', 1, 1),
+--     ('Muôn Kiếp Nhân Sinh', 117000, 'search1.jpg', 'Mô tả sách:...', 1, 2),
+--     ('Cây Cam Ngọt Của Tôi', 75000, 'search3.jpg', 'Mô tả sách:...', 1, 3),
+--     ('Thỏ 7 Màu', 79000, 'search4.jpg', 'Mô tả sách:...', 1, 3),
+--     ('Nhật Ký Targot', 179000, 'search5.jpg', 'Mô tả sách:...', 1, 4),
+--     ('Thay Đổi Cuộc Sống Với Thần Số Học', 173000, 'search6.jpg', 'Mô tả sách:...', 1, 2),
+--     ('Cambridge IELTS 18 Academic', 161000, 'search7.jpeg', 'Mô tả sách:...', 1, 9),
+--     ('Bí mật - Traffic - Bìa Cứng', 221000, 'search20.jpeg', 'Mô tả sách:...', 1, 12),
+--     ('Sức Mạnh Của Ngôn Từ', 73000, 'search12.jpeg', 'Mô tả sách:...', 1, 6),
+--     ('Rèn Luyện Tư Duy Phản Biện', 63000, 'search13.jpeg', 'Mô tả sách:...', 1, 6),
+--     ('25 Chuyên Đề Ngữ Pháp Tiếng Anh Trọng Tâm', 73000, 'search8.jpeg', 'Mô tả sách:...', 1, 9),
+--     ('Hồi Ký Lý Quang Diệu', 100000, 'search16.jpeg', 'Mô tả sách:...', 1, 8),
+--     ('Người Bán Hàng Vĩ Đại Nhất Thế Giới', 180000, 'search19.jpeg', 'Mô tả sách:...', 1, 12),
+--     ('Bến Xe', 22000, 'search22.jpeg', 'Mô tả sách:...', 1, 7),
+--     ('Tiếng Anh Qua Sơ Đồ Tư Duy', 112500, 'search11.jpeg', 'Mô tả sách:...', 1, 9),
+--     ('Tự Truyện Benjamin Franklin', 92000, 'search17.jpeg', 'Mô tả sách:...', 1, 8),
+--     ('Sói Và Dương Cầm', 75000, 'search23.jpeg', 'Mô tả sách:...', 1, 7),
+--     ('Tiếng Anh Cho NgườI Bắt Đầu', 140000, 'search10.jpeg', 'Mô tả sách:...', 1, 9),
+--     ('Tiếp Thị 5.0: Công Nghệ Vị Nhân Sinh', 96000, 'search21.jpeg', 'Mô tả sách:...', 1, 12),
+--     ('Bill Gates: Tham Vọng Lớn Lao', 194000, 'search24.jpeg', 'Mô tả sách:...', 1, 10),
+--     ('Con Tàu Ma Của Thế Chiến II', 194000, 'search18.jpeg', 'Mô tả sách:...', 1, 8),
+--     ('The Big Four - 4 Đại Gia Kiểm Toán', 92000, 'search25.jpeg', 'Mô tả sách:...', 1, 10),
+--     ('Người Mở Khóa Lãng Du', 82000, 'search15.jpeg', 'Mô tả sách:...', 1, 8),
+--     ('Điềm Tĩnh Và Nóng Giận', 67000, 'search14.jpeg', 'Mô tả sách:...', 1, 6);
 
 
 INSERT INTO Belong
-VALUES ('7','1001');
+VALUES ('9','1501');
 INSERT INTO Belong
-VALUES ('6','1002');
+VALUES ('8','1502');
 INSERT INTO Belong
-VALUES ('5','1003');
+VALUES ('10','1503');
 INSERT INTO Belong
-VALUES ('4','1101');
+VALUES ('10','1504');
 INSERT INTO Belong
-VALUES ('3','1102');
+VALUES ('11','1505');
 INSERT INTO Belong
-VALUES ('2','1201');
+VALUES ('9','1506');
 INSERT INTO Belong
-VALUES ('2','1202');
+VALUES ('16','1507');
 INSERT INTO Belong
-VALUES ('2','1203');
+VALUES ('19','1508');
 INSERT INTO Belong
-VALUES ('6','1204');
+VALUES ('13','1509');
 INSERT INTO Belong
-VALUES ('6','1205');
+VALUES ('13','1510');
 INSERT INTO Belong
-VALUES ('7','1301');
+VALUES ('16','1511');
 INSERT INTO Belong
-VALUES ('7','1401');
+VALUES ('15','1512');
+INSERT INTO Belong
+VALUES ('19','1513');
+INSERT INTO Belong
+VALUES ('17','1514');
+INSERT INTO Belong
+VALUES ('15','1515');
+INSERT INTO Belong
+VALUES ('13','1516');
+INSERT INTO Belong
+VALUES ('17','1517');
