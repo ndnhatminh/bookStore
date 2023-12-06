@@ -48,9 +48,11 @@ if (
     if (isset($_GET['category_name'])) {
         $category_name = $_GET['category_name'];
     } else $category_name = "";
-
-
+    if (isset($_GET['cover'])) {
+        $cover = $_GET['cover'];
+    } else $cover = "";
 ?>
+
 
     <!DOCTYPE html>
     <html lang="en">

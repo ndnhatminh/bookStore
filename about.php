@@ -48,21 +48,21 @@ if(isset($_SESSION['role'])){
 </head>
 <body>
     <div>
-    <nav class="navbar navbar-expand-lg" style="padding: 0 7%; position: fixed; z-index: 999; width: 100%; border-radius: 0; background-color: #67D7FF;">            <div class="container-fluid">
-                <a class="navbar-brand" href="index.php" style="font-size: 20px;">Thư Viện Xanh</a>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="padding: 0.7% 7%; position: fixed; z-index: 999; width: 100%; border-radius: 0; background-color: #354c7c;">            <div class="container-fluid">
+    <a class="navbar-brand"  href="index.php" ><span style="color: #fef702;">BOOK</span>Store</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-size: 20px;">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.php">Cửa hàng</a>
+                            <a class="nav-link" aria-current="page" href="index.php">Cửa hàng</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="contact.php">Liên hệ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.php">Thông tin</a>
+                            <a class="nav-link active" href="about.php">Thông tin</a>
                         </li>
                         <li class="nav-item">
                             <?php if (isset($_SESSION['username'])&&$role=='staff') {?>
@@ -86,18 +86,15 @@ if(isset($_SESSION['role'])){
         </nav>
     </div>
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner" style="max-height: 500px;">
+        <div class="carousel-inner" style="max-height: 500px;">
                 <div class="carousel-item active">
-                    <img src="img/library.jpg" class="d-block w-100 ">
+                    <img src="img/library3.jpg" class="d-block w-100 ">
                 </div>
                 <div class="carousel-item">
-                    <img src="img/library2.jpg" class="d-block w-100 ">
+                    <img src="img/library4.webp" class="d-block w-100 ">
                 </div>
                 <div class="carousel-item">
-                    <img src="img/lb3.jfif" class="d-block w-100 ">
-                </div>
-                <div class="carousel-item">
-                    <img src="img/lb4.jpeg" class="d-block w-100 ">
+                    <img src="img/library5.jpeg" class="d-block w-100 ">
                 </div>
             </div>
             <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -112,8 +109,8 @@ if(isset($_SESSION['role'])){
 
     <div class="container">
         <!-- About Section -->
-        <div class="mt-5">
-            <h2 class="mb-4">Về chúng tôi</h2>
+        <div class="mt-5 mb-5">
+            <h2 class="mb-1">Về chúng tôi</h2>
             <p>
                 Chào mừng bạn đến với cửa hàng sách trực tuyến: "Thư viên xanh" của chúng tôi! Chúng tôi mong sẽ mang đến một bộ sưu tập đa dạng sách cũng như dịch vụ tốt nhất cho các độc giả.
             </p>
@@ -127,11 +124,13 @@ if(isset($_SESSION['role'])){
 
     <!-- Scripts and Bootstrap JS -->
     <!-- ... (same as in the previous file) ... -->
-    <footer class="bg-dark text-light mt-5">
-        <div class="container py-3">
-            <p class="text-center mb-0">Thư Viện Xanh</p>
-        </div>
-    </footer>
+        <footer style="background-color:#354c7c;">
+            <div class="text-center p-3" style="color:#ffffff;">
+                © 2023:
+                <a class="navbar-brand" href="index.php"><span style="color: #fef702;">BOOK</span>Store -- bookstore.support@gmail.com</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
 </body>
 
 </html>
